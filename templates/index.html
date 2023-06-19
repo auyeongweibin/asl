@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/jpg" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+
+    <title>Project Polish - ASL</title>
+</head>
+<body>
+<main class="flex min-h-screen flex-col items-center justify-between p-24">
+    <div class="row">
+        <img src="{{ url_for('predict') }}" width="100%">
+    </div>
+    <div class="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+        <div class="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center lg:static lg:h-auto lg:w-auto lg:bg-none">
+          <a
+            class="pointer-events-none flex place-items-center gap-2 p-8"
+            href="https://smubia.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            By 
+            <img src="{{ url_for('static', filename='smubia.png') }}" width=100 height=24>
+          </a>
+        </div>
+      </div>
+      <div class="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 before:lg:h-[360px]">
+    </div>
+    <div class="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+    </div>
+    </main>
+</body>
+</html>
