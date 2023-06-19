@@ -14,6 +14,11 @@ def create_app(config_filename):
 app, model = create_app("config")
 application = app
 
+@application.route('/health', methods=['GET'])
+
+def health():
+    return 'ASL App Running!'
+
 @application.route('/', methods=['GET'])
 
 def index():
