@@ -8,7 +8,7 @@ WORKDIR /app
 
 # setup dependencies
 RUN apt-get update
-RUN apt-get install -y gcc 
+RUN apt-get install -y gcc
 RUN apt-get install -y nodejs npm
 
 COPY requirements.txt requirements.txt
