@@ -3,7 +3,7 @@ Project Polish - ASL
 
 ## Build
 ```
-pip install requirements.txt && npm i
+pip install -r requirements.txt && npm i
 ```
 
 ## Run 
