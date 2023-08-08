@@ -799,4 +799,17 @@ body {
     content: var(--tw-content);
     height: 360px;
   }
+
+  .image-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+  }
+    
+  .image {
+    max-width: 100%;
+    height: 100%;
+  }
 }
