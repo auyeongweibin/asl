@@ -11,8 +11,9 @@
 </head>
 <body>
 <main class="flex min-h-screen flex-col items-center justify-between p-24">
-    <div class="row">
-        <img src="{{ url_for('predict') }}" width="100%">
+    <div class="row image-container">
+        <img src="{{ url_for('predict') }}" class="image" style="width: 75%;">
+        <img src="{{ url_for('static', filename='asl-alphabets.jpeg') }}" class="image" style="width: 25%;; object-fit: cover;">
     </div>
     <div class="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <div class="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center lg:static lg:h-auto lg:w-auto lg:bg-none">

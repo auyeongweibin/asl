@@ -1,18 +1,35 @@
 import cv2
+import cvzone
+from cvzone.SelfiSegmentationModule import SelfiSegmentation
+import os
+import time
 
 def detect(model):
     words = ['SMUBIA', 'SCIS']
     current_word = 0
     current_letter = 0
+    pTime = 0
+    cTime = 0
+
     while True:
         cap = cv2.VideoCapture(0)
+        cap.set(cv2.CAP_PROP_FPS, 60)
+        segmentor = SelfiSegmentation()
 
         if not (cap.isOpened()):
             print("Could not open video device")
             break
             
         else:
-            _, frame = cap.read()
+
+            _, frame1 = cap.read()
+            frame = segmentor.removeBG(frame1, (255,255,255), threshold=0.2)
+
+            cTime = time.time()
+            fps = 1 / (cTime - pTime)
+            pTime = cTime
+            cv2.putText(frame, f'FPS: {int(fps)}', (frame.shape[1] - 150, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36,255,12), 2)
+
             result = model(frame)
             prediction = result[0]
             
